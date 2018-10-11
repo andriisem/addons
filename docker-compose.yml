@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+
+  web:
+    image: odoo:11.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+    - ./:/mnt/extra-addons
+    - odoo-data:/var/lib/odoo
+    - odoo-config:/etc/odoo
+
+    command: odoo --db-filter=^odoo
+
+  db:
+    image: postgres:10.0
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata10e
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata/10.0
+
+volumes:
+  odoo-data:
+  odoo-config:
+  odoo-db-data:
