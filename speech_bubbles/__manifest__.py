@@ -7,9 +7,13 @@
     'category': '',
     'sequence': 900,
     'version': '0.1',
-    'depends': [],
+    'depends': [
+        'base_setup',
+        'mail'
+    ],
     'data': [
-        'views/assets.xml'
+        'views/assets.xml',
+        'views/res_config_settings_views.xml',
     ],
     'application': False,
 }
