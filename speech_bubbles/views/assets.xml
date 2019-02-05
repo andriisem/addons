@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="speech_bubbles_assets_backend_less" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/less" href="/speech_bubbles/static/src/less/tread.less"/>
-        </xpath>
-    </template>
-</odoo>
