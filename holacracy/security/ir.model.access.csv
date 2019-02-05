@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_holacracy_circles,holacracy.circles,model_holacracy_circles,base.group_user,1,1,1,1
+access_role_type,role.type,model_role_type,base.group_user,1,1,1,1
+access_circles_roles,circles.roles,model_circles_roles,base.group_user,1,1,1,1
+access_circles_tention,circles.tention,model_circles_tention,base.group_user,1,1,1,1
