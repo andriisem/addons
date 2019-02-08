@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-extend="HrAttendanceKioskConfirm">
+        <t t-jquery=".o_hr_attendance_kiosk_mode h1" t-operation="after">
+            <h1 class="mb8">Department: <t t-esc="widget.department_name"/></h1>
+        </t>
+    </t>
+
+</templates>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+     <template id="assets_frontend" name="account assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/hr_attendance_department/static/src/js/employee_kanban_view_handler.js"/>
+            <script type="text/javascript" src="/hr_attendance_department/static/src/js/department_kanban_view_handler.js"/>
+            <script type="text/javascript" src="/hr_attendance_department/static/src/js/kiosk_confirm.js"/>
+        </xpath>
+    </template>
+
+</odoo>

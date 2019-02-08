@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+
+    <record id="hr_employees_view_inherit_kanban" model="ir.ui.view">
+        <field name="name">hr.employee.inherit.kanban</field>
+        <field name="model">hr.employee</field>
+        <field name="priority">99</field>
+        <field name="inherit_id" ref="hr_attendance.hr_employees_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="inside">
+                <field name="department_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
