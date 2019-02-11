@@ -2,7 +2,7 @@
     'name': 'Pure CSS speech bubbles',
     'summary': 'Pure CSS speech bubbles',
     'description': 'Pure CSS speech bubbles',
-    'author': 'Andrii Semko (@andriisem)',
+    'author': 'Andrii Semko | @andriisem',
     'website': 'https://github.com/andriisem',
     'category': '',
     'sequence': 900,

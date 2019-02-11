@@ -5,7 +5,7 @@
     'description': """
     - recalculation by currency
     """,
-    'author': 'Andrey Semko | @andriisem',
+    'author': 'Andrii Semko | @andriisem',
     'depends': [
         'sale',
         'account',
