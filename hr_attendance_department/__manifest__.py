@@ -2,7 +2,7 @@
     "name": "Hr Attendance Department",
     "version": "1.0",
     "category": "HR",
-    "author": 'Andrey Semko | @andriisem',
+    "author": 'Andrii Semko | @andriisem',
     "description": """
         The employee chooses the department where works
     """,
