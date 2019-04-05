@@ -3,6 +3,7 @@
     "version": "1.0",
     "category": "HR",
     "author": 'Andrii Semko | @andriisem',
+    "website": "https://www.upwork.com/o/profiles/users/_~013175f63de76dd835/",
     "description": """
         The employee chooses the department where works
     """,
