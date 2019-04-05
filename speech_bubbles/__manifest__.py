@@ -3,7 +3,7 @@
     'summary': 'Pure CSS speech bubbles',
     'description': 'Pure CSS speech bubbles',
     'author': 'Andrii Semko | @andriisem',
-    'website': 'https://github.com/andriisem',
+    'website': 'https://www.upwork.com/o/profiles/users/_~013175f63de76dd835/',
     'category': '',
     'sequence': 900,
     'version': '0.1',
