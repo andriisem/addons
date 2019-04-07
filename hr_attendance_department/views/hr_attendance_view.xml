@@ -9,7 +9,7 @@
         <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
         <field name="arch" type="xml">
             <field name="employee_id" position="after">
-                <field name="department_id"/>
+                <field name="department_restaurant_id"/>
             </field>
         </field>
     </record>
@@ -20,7 +20,7 @@
         <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
         <field name="arch" type="xml">
             <field name="employee_id" position="after">
-                <field name="department_id"/>
+                <field name="department_restaurant_id"/>
             </field>
         </field>
     </record>

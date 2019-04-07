@@ -4,7 +4,7 @@ from odoo import models, api, fields, exceptions, _
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
-    department_id = fields.Many2one('hr.department', "Department", required=True)
+    department_restaurant_id = fields.Many2one('hr.department.restaurant', string='Department Restaurant')
 
     @api.multi
     def attendance_action_change(self):
@@ -20,7 +20,8 @@ class HrEmployee(models.Model):
             vals = {
                 'employee_id': self.id,
                 'check_in': action_date,
-                'department_id': self._context.get('department_id')
+                'department_restaurant_id': self._context.get('department_restaurant_id'),
+                'clock_reason_id': self._context.get('clock_reason_id')
             }
             return self.env['hr.attendance'].create(vals)
         else:

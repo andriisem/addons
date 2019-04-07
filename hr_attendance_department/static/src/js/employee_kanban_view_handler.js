@@ -13,7 +13,7 @@ odoo.define('hr_attendance_department.department_kanban_view_handler', function(
                     if (self.recordData.childs.length > 0) {
                        self._action_department_kanban(self.recordData.childs)
                     } else {
-                        self._action_department_kanban([self.recordData.department_id.res_id])
+                        self._action_department_kanban([self.recordData.department_restaurant_id.res_id])
                     }
                 });
             } else {
@@ -31,7 +31,7 @@ odoo.define('hr_attendance_department.department_kanban_view_handler', function(
                 self.do_action({
                     type: 'ir.actions.act_window',
                     name: 'Department',
-                    res_model: "hr.department",
+                    res_model: "hr.department.restaurant",
                     views: [[view_id, 'kanban']],
                     domain: [['id', 'in', departments]],
                     target: 'current',
@@ -50,10 +50,11 @@ odoo.define('hr_attendance_department.department_kanban_view_handler', function(
 
         _child_department_employee: function () {
             var self =  this;
+            var id = self.recordData.department_restaurant_id.data.id;
             var def = this._rpc({
-                model: 'hr.department',
+                model: 'hr.department.restaurant',
                 method: 'search_read',
-                domain: [['id', '=', self.recordData.department_id.data.id]],
+                domain: [['id', '=', id]],
                 fields: ['name', 'child_ids']
             }).then(function (record) {
                 self.recordData.childs = record[0].child_ids;

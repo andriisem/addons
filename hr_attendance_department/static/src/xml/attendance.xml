@@ -4,7 +4,10 @@
 
     <t t-extend="HrAttendanceKioskConfirm">
         <t t-jquery=".o_hr_attendance_kiosk_mode h1" t-operation="after">
-            <h1 class="mb8">Department: <t t-esc="widget.department_name"/></h1>
+            <t t-if="widget.department_name">
+                <h2 class="mb8">Department: <t t-esc="widget.department_name"/></h2>
+            </t>
+
         </t>
     </t>
 
