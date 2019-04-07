@@ -3,7 +3,8 @@
     "version": "1.0",
     "category": "Accounting",
     "description": """
-    Datepicker related by locale:
+Datepicker Related by Locale:
+-----------------------------
     * first day of the week
     * translation
     """,
