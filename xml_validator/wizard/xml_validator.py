@@ -29,10 +29,8 @@ class XMLValidator(models.TransientModel):
     @api.multi
     def validate(self):
         self.exist_files()
-        schema = base64.b64decode(self.xmlschema_doc)
-        xml = base64.b64decode(self.xml_doc)
-        xmlschema_doc = etree.XML(schema)
+        xmlschema_doc = etree.XML(base64.b64decode(self.xmlschema_doc))
         xmlschema = etree.XMLSchema(xmlschema_doc)
-        xml_doc = etree.XML(xml)
+        xml_doc = etree.XML(base64.b64decode(self.xml_doc))
         result = xmlschema.validate(xml_doc)
         raise UserError(result)
