@@ -5,7 +5,7 @@
     "author": 'Andrii Semko | @andriisem',
     "website": "https://www.upwork.com/o/profiles/users/_~013175f63de76dd835/",
     "description": """
-        XML Validator
+        # The validation check is performed against any XML schema 
     """,
     "depends": ['base'],
     "data": [
