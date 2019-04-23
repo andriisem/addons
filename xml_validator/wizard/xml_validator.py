@@ -10,9 +10,9 @@ class XMLValidator(models.TransientModel):
     _description = 'XML Validator'
 
     xmlschema_doc = fields.Binary('XML Schema')
-    xmlschema_doc_name = fields.Char('XML Schema')
+    xmlschema_doc_name = fields.Char('Filename XML Schema')
     xml_doc = fields.Binary('XML DOC')
-    xml_doc_name = fields.Char('XML DOC')
+    xml_doc_name = fields.Char('Filename XML DOC')
 
     def exist_files(self):
         if not self.xmlschema_doc:
