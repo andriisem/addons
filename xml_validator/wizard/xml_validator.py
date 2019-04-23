@@ -1,3 +1,5 @@
+import base64
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
@@ -32,3 +34,10 @@ class XMLValidator(models.TransientModel):
     @api.multi
     def validate(self):
         self.exist_files()
+        a = base64.b64decode(self.xmlschema_doc)
+        b = base64.b64decode(self.xml_doc)
+        xmlschema_doc = etree.XML(a)
+        xmlschema = etree.XMLSchema(xmlschema_doc)
+        xml_doc = etree.XML(b)
+        result = xmlschema.validate(xml_doc)
+        raise UserError(result)
