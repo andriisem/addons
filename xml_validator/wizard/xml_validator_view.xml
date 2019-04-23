@@ -8,8 +8,10 @@
         <field name="arch" type="xml">
             <form string="Validator">
                 <group>
-                    <field name="xmlschema_doc"/>
-                    <field name="xml_doc"/>
+                    <field name="xmlschema_doc" filename="xmlschema_doc_name"/>
+                    <field name="xmlschema_doc_name" invisible="1"/>
+                    <field name="xml_doc" filename="xml_doc_name"/>
+                    <field name="xml_doc_name" invisible="1"/>
                 </group>
                 <footer>
                     <button string='Validate' name="validate" type="object" class="btn-primary"/>
