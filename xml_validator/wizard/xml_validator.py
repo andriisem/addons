@@ -1,13 +1,8 @@
 import base64
+from lxml import etree
 
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
-
-try:
-    from lxml import etree
-except ImportError:
-    raise ImportError(
-        'Please install lxml on your system. (sudo pip3 install lxml)')
 
 
 class XMLValidator(models.TransientModel):
