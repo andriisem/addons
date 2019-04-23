@@ -7,8 +7,11 @@
     "description": """
         XML Validator
     """,
-    "depends": [],
-    "data": [],
+    "depends": ['base'],
+    "data": [
+        'wizard/xml_validator_view.xml',
+        'views/xml_validator_menu.xml',
+    ],
     "application": False,
     "installable": True,
 }
