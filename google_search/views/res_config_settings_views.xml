@@ -13,7 +13,7 @@
                         <div class="o_setting_right_pane">
                             <label for="google_search_id" string="Google Search ID"/>
                             <field name="google_search_id" nolabel="1"/>
-                            <a href="https://developers.google.com/custom-search/?hl=RU" class="oe-link" target="_blank"><i class="fa fa-fw fa-arrow-right"/>Tutorial</a>
+                            <a href="https://cse.google.com/cse/all?hl=RU" class="oe-link" target="_blank"><i class="fa fa-fw fa-arrow-right"/>Tutorial</a>
                         </div>
                     </div>
                 </div>
