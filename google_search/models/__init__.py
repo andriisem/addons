@@ -1,1 +1,1 @@
-from . import res_setting_config
+from . import res_config_settings
