@@ -10,6 +10,7 @@ Google Custom Search
     """,
     "depends": ['website'],
     "data": [
+        'views/res_config_settings_views.xml'
     ],
     "application": False,
     "installable": True,
