@@ -4,7 +4,7 @@
     <template id="snippets" inherit_id="website.snippets">
         <xpath expr="//div[@id='snippet_feature']/div[hasclass('o_panel_body')]" position="inside">
             <t t-snippet="google_search.page_width"
-               t-thumbnail="" />
+               t-thumbnail="/google_search/static/src/img/icon.png" />
         </xpath>
     </template>
 
