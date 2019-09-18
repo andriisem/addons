@@ -11,7 +11,6 @@ Google Custom Search
     "depends": ['website'],
     "data": [
         'views/assets.xml',
-        'views/res_config_settings_views.xml',
         'views/snippets.xml'
     ],
     "application": False,

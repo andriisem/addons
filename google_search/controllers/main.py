@@ -7,6 +7,5 @@ class GoogleEngine(http.Controller):
 
     @http.route('/get/engine_id', type='json', auth="none")
     def get_engine(self):
-        vals = {}
-        vals['engine_id'] = request.env['res.company']._get_main_company().google_search_id
-        return vals
+        google_search_id = self.env['ir.config_parameter'].sudo().get_param('google.google_search_id')
+        return {'engine_id': google_search_id}
