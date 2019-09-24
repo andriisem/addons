@@ -4,6 +4,7 @@
     'description': """
 Parse NBU rates and updated Odoo active currencies rates accordingly
 =====================================================================
+- Downloads exchange rates from the National Bank of Ukraine
 - API: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
     """,
     'category': 'Accounting',
