@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "NBU rates parser",
+    'name': "NBU Exchange Rates",
     'description': """
 Parse NBU rates and updated Odoo active currencies rates accordingly
 =====================================================================
