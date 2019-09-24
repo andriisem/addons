@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<odoo>
+
+    <record id="view_currency_inherit_form" model="ir.ui.view">
+        <field name="name">res.currency.inherit.form</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header groups="base.group_no_one">
+                    <button name="action_parse_nbu_rates" string="Update Currency" type="object" class="oe_highlight"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
