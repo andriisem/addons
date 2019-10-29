@@ -5,6 +5,7 @@
     "category": "Tools",
     "author": 'Andrii Semko | @andriisem',
     "website": "https://www.upwork.com/o/profiles/users/_~013175f63de76dd835/",
+    'support': 'https://github.com/andriisem/',
     'depends': ['base'],
     'data': [
         'data/ir_cron.xml',
