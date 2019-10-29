@@ -9,7 +9,8 @@ Parse NBU rates and updated Odoo active currencies rates accordingly
     """,
     'category': 'Accounting',
     "author": 'Andrii Semko | @andriisem',
-    "website": "https://www.upwork.com/o/profiles/users/_~013175f63de76dd835/",
+    "website": "https://andriisem.github.io/",
+    'support': 'semko.andrey.i@gmail.com',
     'version': '1.0',
     'depends': [
         'base',

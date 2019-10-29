@@ -3,7 +3,8 @@
     "version": "1.0",
     "category": "Tools",
     "author": 'Andrii Semko | @andriisem',
-    "website": "https://www.upwork.com/o/profiles/users/_~013175f63de76dd835/",
+    "website": "https://andriisem.github.io/",
+    'support': 'semko.andrey.i@gmail.com',
     "description": """
 The validation check is performed against XML schema
 ========================================================
