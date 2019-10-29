@@ -92,7 +92,9 @@ class S3Backup(models.Model):
             response = client.list_objects_v2(Bucket=rec.bucket_name)
             keys_to_delete = [{
                 'Key': object['Key']
-            } for object in response['Contents'] if object['LastModified'].replace(tzinfo=utc) < utc.localize(oldest) and rec.folder in object['Key']]
+            } for object in response['Contents']
+                if object['LastModified'].replace(tzinfo=utc) < utc.localize(oldest)
+                and rec.folder in object['Key']]
             if keys_to_delete:
                 client.delete_objects(Bucket=rec.bucket_name, Delete={
                                       'Objects': keys_to_delete})
