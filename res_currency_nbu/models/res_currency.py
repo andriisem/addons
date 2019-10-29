@@ -12,12 +12,14 @@ class ResCurrency(models.Model):
         company_ids = self.env['res.company'].search([])
         for company in company_ids:
 
-            active_currencies = company.currency_id.search([('active', '=', 't')])
+            active_currencies = company.currency_id.search(
+                [('active', '=', 't')])
             curr_codes = active_currencies.mapped('name')
 
             rates_dict = get_rates_by_code(curr_codes)
 
-            default_currency = company.currency_id.env.ref('base.main_company').currency_id
+            default_currency = company.currency_id.env.ref(
+                'base.main_company').currency_id
 
             rates_dict = {
                 k: (v/rates_dict[default_currency.name]) for

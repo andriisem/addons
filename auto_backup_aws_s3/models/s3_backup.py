@@ -4,7 +4,7 @@ import logging
 from datetime import datetime, timedelta, date
 from dateutil.relativedelta import relativedelta
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 from odoo.service import db
 
 
@@ -41,12 +41,15 @@ class S3Backup(models.Model):
     bucket_name = fields.Char(string='Bucket name', required=True)
     folder = fields.Char(string='Folder')
     days_to_keep = fields.Integer(string='Days to Keep', required=True)
-    nextcall = fields.Date(string='Next Execution Date', default=fields.Date.context_today, required=True)
+    nextcall = fields.Date(string='Next Execution Date',
+                           default=fields.Date.context_today, required=True)
 
     @api.model
     def _get_api_keys(self):
-        aws_access_key_id = self.env['ir.config_parameter'].sudo().get_param('backup_s3.aws_access_key_id')
-        aws_secret_access_key = self.env['ir.config_parameter'].sudo().get_param('backup_s3.aws_secret_access_key')
+        aws_access_key_id = self.env['ir.config_parameter'].sudo(
+        ).get_param('backup_s3.aws_access_key_id')
+        aws_secret_access_key = self.env['ir.config_parameter'].sudo(
+        ).get_param('backup_s3.aws_secret_access_key')
         return aws_access_key_id, aws_secret_access_key
 
     @api.model
@@ -58,27 +61,30 @@ class S3Backup(models.Model):
             aws_secret_access_key=aws_secret_access_key
         )
         return client
-        
+
     @api.multi
     def action_backup(self):
         db_name = self.env.cr.dbname
         successful = self.browse()
         for rec in self.filtered(lambda r: r.active and r.nextcall == date.today()):
-            fname = "{:%Y_%m_%d_%H_%M_%S}-{}-backup.zip".format(datetime.now(), db_name)
+            fname = "{:%Y_%m_%d_%H_%M_%S}-{}-backup.zip".format(
+                datetime.now(), db_name)
             backup_file = db.dump_db(db_name, None)
             try:
                 client = rec._get_client()
-                client.upload_fileobj(backup_file, rec.bucket_name, '%s/%s' % (rec.folder, fname))
+                client.upload_fileobj(
+                    backup_file, rec.bucket_name, '%s/%s' % (rec.folder, fname))
             except ClientError as e:
                 logging.error(e)
             finally:
-                rec.nextcall += _intervalTypes[rec.periodicity](INTERVAL_NUMBER)
+                rec.nextcall += _intervalTypes[rec.periodicity](
+                    INTERVAL_NUMBER)
                 backup_file.close()
             successful |= rec
         successful.cleanup()
-    
+
     @api.multi
-    def cleanup(self):  
+    def cleanup(self):
         utc = pytz.UTC
         for rec in self.filtered("days_to_keep"):
             client = rec._get_client()
@@ -88,8 +94,9 @@ class S3Backup(models.Model):
                 'Key': object['Key']
             } for object in response['Contents'] if object['LastModified'].replace(tzinfo=utc) < utc.localize(oldest) and rec.folder in object['Key']]
             if keys_to_delete:
-                client.delete_objects(Bucket=rec.bucket_name, Delete={'Objects': keys_to_delete})
-            
+                client.delete_objects(Bucket=rec.bucket_name, Delete={
+                                      'Objects': keys_to_delete})
+
     @api.model
     def action_backup_all(self):
         """Run all scheduled backups."""
