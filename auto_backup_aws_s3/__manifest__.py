@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Database Auto-Backup to Amazon S3",
+    'name': "Database Auto-Backup to S3",
     'version': '12.0.1.0.0',
     "category": "Tools",
+    "description": """
+Database Auto-Backup to S3
+==========================
+Documentation: https://andriisem.github.io/odoo-database-backup-to-s3/
+    """,
     "author": 'Andrii Semko | @andriisem',
     "website": "https://andriisem.github.io/",
     'support': 'semko.andrey.i@gmail.com',
