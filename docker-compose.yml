@@ -3,7 +3,7 @@ version: '2'
 services:
 
   web:
-    image: odoo:12.0
+    image: odoo:10.0
     depends_on:
       - db
     ports:
@@ -13,7 +13,7 @@ services:
     - odoo-data:/var/lib/odoo
     - odoo-config:/etc/odoo
 
-    command: odoo --db-filter=^odoo
+    # command: odoo --db-filter=^odoo
 
   db:
     image: postgres:10.1

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
-<odoo>
-
-    <menuitem id="menu_xml_validator" name="XML Validator" parent="base.menu_custom"/>
-
-    <menuitem id="menu_ir_cron_act" action="action_xml_validator" parent="menu_xml_validator"/>
-</odoo>
